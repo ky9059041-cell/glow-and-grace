@@ -13,168 +13,263 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #fff8fb;
-    color: #292027;
+    color: #30212a;
 }
 
 header {
-    background: #ffffff;
-    padding: 20px 12px;
+    background: white;
     text-align: center;
-    border-bottom: 1px solid #f3dce7;
+    padding: 22px 10px;
 }
 
 header h1 {
     color: #d63384;
-    letter-spacing: 3px;
-    font-size: 27px;
+    letter-spacing: 4px;
+    font-size: 28px;
 }
 
 header p {
-    margin-top: 7px;
+    margin-top: 8px;
     color: #777;
-    font-size: 13px;
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 
 nav {
-    background: #292027;
-    padding: 14px 5px;
+    background: #30212a;
+    padding: 15px 5px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 9px;
+    margin: 0 8px;
     font-size: 13px;
 }
 
 .hero {
-    background: linear-gradient(135deg, #f8c8dc, #fff0f6);
     text-align: center;
-    padding: 55px 20px;
+    padding: 65px 20px;
+    background: linear-gradient(135deg, #f6c2d8, #fff0f6);
 }
 
 .hero h2 {
-    font-size: 32px;
+    font-size: 36px;
     margin-bottom: 15px;
 }
 
 .hero p {
+    line-height: 1.7;
     margin-bottom: 25px;
-    color: #57424d;
 }
 
 .button {
     display: inline-block;
+    border: none;
     background: #d63384;
     color: white;
-    padding: 12px 22px;
-    border: none;
+    padding: 13px 22px;
     border-radius: 25px;
     text-decoration: none;
-    cursor: pointer;
     font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #a61e61;
+    transform: translateY(-2px);
 }
 
 section {
-    padding: 35px 16px;
+    padding: 40px 15px;
 }
 
-.section-title {
+.title {
     text-align: center;
-    font-size: 25px;
-    margin-bottom: 25px;
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #88717d;
+    margin-bottom: 28px;
+    font-size: 14px;
 }
 
 .products {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    gap: 15px;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .product {
     background: white;
-    border-radius: 14px;
+    border-radius: 15px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 3px 12px #e9cbd8;
-    padding-bottom: 18px;
+    padding-bottom: 17px;
+    box-shadow: 0 4px 15px #e9cbd8;
+    transition: 0.3s;
 }
 
-.product-image {
-    height: 125px;
+.product:hover {
+    transform: translateY(-4px);
+}
+
+.product img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
     background: #fce4ef;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 60px;
 }
 
 .product h3 {
-    font-size: 15px;
-    margin: 14px 5px 8px;
+    font-size: 14px;
+    margin: 13px 5px 8px;
 }
 
-.product p {
+.price {
     color: #d63384;
+    font-size: 17px;
     font-weight: bold;
     margin-bottom: 12px;
 }
 
 .product button {
-    background: #292027;
+    background: #30212a;
     color: white;
     border: none;
-    border-radius: 20px;
-    padding: 9px 12px;
+    border-radius: 22px;
+    padding: 10px 12px;
     cursor: pointer;
+}
+
+.product button:hover {
+    background: #d63384;
 }
 
 #cart {
     background: #fce4ef;
     text-align: center;
-    border-radius: 15px;
-    padding: 25px 10px;
 }
 
-#cart p {
-    margin: 12px;
+.cart-box {
+    background: white;
+    max-width: 550px;
+    margin: auto;
+    padding: 22px 15px;
+    border-radius: 16px;
 }
 
 #cartItems {
     list-style: none;
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 #cartItems li {
-margin: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-bottom: 1px solid #f2dce7;
+    padding: 12px 0;
+    font-size: 13px;
+    text-align: left;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity button,
+.remove {
+    border: none;
+    background: #f7d5e5;
+    padding: 6px 9px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.total {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.clear-button {
+    background: #30212a;
+    color: white;
+    border: none;
+    padding: 12px 17px;
+    border-radius: 22px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.whatsapp-button {
+    background: #198754;
+    color: white;
+    border: none;
+    padding: 13px 17px;
+    border-radius: 25px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
 .about {
-    text-align: center;
-    line-height: 1.8;
     background: white;
+    text-align: center;
+    line-height: 1.9;
+}
+
+.about p {
+    max-width: 600px;
+    margin: auto;
+    color: #66545e;
 }
 
 footer {
-    background: #292027;
+    background: #30212a;
     color: white;
     text-align: center;
-    padding: 24px 12px;
+    padding: 30px 15px;
+    line-height: 2;
     font-size: 13px;
-    line-height: 1.8;
 }
 
-@media (min-width: 600px) {
+footer h3 {
+    color: #ffb6d5;
+    letter-spacing: 3px;
+}
+
+@media (min-width: 650px) {
     .products {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     .hero h2 {
-        font-size: 42px;
+        font-size: 48px;
+    }
+
+    .product img {
+        height: 190px;
     }
 }
 </style>
@@ -196,48 +291,54 @@ footer {
 
 <div class="hero" id="home">
     <h2>Find Your Glow 💗</h2>
-    <p>Your little corner of beauty and self-care.</p>
+    <p>Beauty begins with feeling good about yourself.<br>
+    Discover your new beauty favourites!</p>
     <a href="#shop" class="button">EXPLORE PRODUCTS</a>
 </div>
 
 <section id="shop">
-    <h2 class="section-title">Our Beauty Picks 🌸</h2>
+    <h2 class="title">Our Beauty Picks 🌸</h2>
+    <p class="subtitle">A little beauty, a lot of confidence.</p>
 
     <div class="products">
 
         <div class="product">
-            <div class="product-image">💄</div>
+            <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=500&q=80"
+                 alt="Lipstick">
             <h3>Pretty Pink Lipstick</h3>
-            <p>₹299</p>
-            <button onclick="addToCart('Pretty Pink Lipstick', 299)">
-                Add to Cart
+            <p class="price">₹299</p>
+            <button onclick="addToCart('Pretty Pink Lipstick',299)">
+                Add to Cart +
             </button>
         </div>
 
         <div class="product">
-            <div class="product-image">💋</div>
+            <img src="https://images.unsplash.com/photo-1631214540242-5c7e4a3d2a83?auto=format&fit=crop&w=500&q=80"
+                 alt="Beauty makeup">
             <h3>Glossy Lip Gloss</h3>
-            <p>₹199</p>
-            <button onclick="addToCart('Glossy Lip Gloss', 199)">
-                Add to Cart
+            <p class="price">₹199</p>
+            <button onclick="addToCart('Glossy Lip Gloss',199)">
+                Add to Cart +
             </button>
         </div>
 
         <div class="product">
-            <div class="product-image">🧴</div>
+            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80"
+                 alt="Skincare product">
             <h3>Daily Face Moisturizer</h3>
-            <p>₹349</p>
-            <button onclick="addToCart('Daily Face Moisturizer', 349)">
-                Add to Cart
+            <p class="price">₹349</p>
+            <button onclick="addToCart('Daily Face Moisturizer',349)">
+                Add to Cart +
             </button>
         </div>
 
         <div class="product">
-            <div class="product-image">🌷</div>
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80"
+                 alt="Makeup products">
             <h3>Soft Pink Blush</h3>
-            <p>₹249</p>
-            <button onclick="addToCart('Soft Pink Blush', 249)">
-                Add to Cart
+            <p class="price">₹249</p>
+            <button onclick="addToCart('Soft Pink Blush',249)">
+                Add to Cart +
             </button>
         </div>
 
@@ -245,76 +346,189 @@ footer {
 </section>
 
 <section id="cart">
-    <h2>🛍️ Your Shopping Cart</h2>
-    <p>Items in cart: <strong id="cartCount">0</strong></p>
+    <h2 class="title">🛍️ Your Shopping Cart</h2>
+    <p class="subtitle">Your beauty favourites, all in one place.</p>
 
-    <ul id="cartItems"></ul>
+    <div class="cart-box">
+        <p>Items in cart: <strong id="cartCount">0</strong></p>
 
-    <p>Total: <strong id="cartTotal">₹0</strong></p>
+        <ul id="cartItems">
+            <li>Your cart is empty 💗</li>
+        </ul>
 
-    <button class="button" onclick="clearCart()">
-        Clear Cart
-    </button>
+        <p class="total">
+            Total: <strong id="cartTotal">₹0</strong>
+        </p>
+
+        <button class="clear-button" onclick="clearCart()">
+            Clear Cart
+        </button>
+
+        <br>
+
+        <button class="whatsapp-button" onclick="orderWhatsApp()">
+            💬 Order on WhatsApp
+        </button>
+    </div>
 </section>
 
 <section class="about" id="about">
-    <h2 class="section-title">About Glow & Grace 💗</h2>
+    <h2 class="title">About Glow & Grace 💕</h2>
     <p>
         Welcome to Glow & Grace, where beauty meets confidence.
-        Explore our sample makeup and skincare collection and
-        celebrate your own unique glow!
+        We believe every person deserves to feel beautiful in their
+        own unique way. Explore our sample makeup and skincare
+        collection and celebrate your glow!
     </p>
 </section>
 
 <footer>
     <h3>GLOW & GRACE</h3>
     <p>Your Beauty. Your Glow. ✨</p>
-    <p>Contact: hello@example.com</p>
-    <p>© 2026 Glow & Grace. Practice Website.</p>
+    <p>Made with 💗 for beauty lovers.</p>
+    <p>© 2026 Glow & Grace</p>
+    <p>Practice website — sample products and prices.</p>
 </footer>
 
 <script>
 let cart = [];
-let total = 0;
 
 function addToCart(name, price) {
-    cart.push({ name: name, price: price });
-    total += price;
+    let item = cart.find(function(product) {
+        return product.name === name;
+    });
+
+    if (item) {
+        item.quantity++;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
     updateCart();
     alert(name + " added to your cart! 💗");
 }
 
-function updateCart() {
-    document.getElementById("cartCount").textContent = cart.length;
-    document.getElementById("cartTotal").textContent = "₹" + total;
+function changeQuantity(index, amount) {
+    cart[index].quantity += amount;
 
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    updateCart();
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function updateCart() {
+    let count = 0;
+    let total = 0;
     let list = document.getElementById("cartItems");
+
     list.innerHTML = "";
 
     cart.forEach(function(item, index) {
-        let li = document.createElement("li");
-        li.textContent = item.name + " - ₹" + item.price;
+        count += item.quantity;
+        total += item.price * item.quantity;
 
-        let removeButton = document.createElement("button");
-        removeButton.textContent = " Remove";
-        removeButton.onclick = function() {
-            total -= cart[index].price;
-            cart.splice(index, 1);
-            updateCart();
+        let li = document.createElement("li");
+
+        let name = document.createElement("span");
+        name.textContent = item.name + " — ₹" +
+            (item.price * item.quantity);
+
+        let controls = document.createElement("div");
+        controls.className = "quantity";
+
+        let minus = document.createElement("button");
+        minus.textContent = "−";
+        minus.onclick = function() {
+            changeQuantity(index, -1);
         };
 
-        li.appendChild(removeButton);
+        let qty = document.createElement("span");
+        qty.textContent = item.quantity;
+
+        let plus = document.createElement("button");
+        plus.textContent = "+";
+        plus.onclick = function() {
+            changeQuantity(index, 1);
+        };
+
+        let remove = document.createElement("button");
+        remove.textContent = "×";
+        remove.className = "remove";
+        remove.setAttribute("aria-label", "Remove " + item.name);
+        remove.onclick = function() {
+            removeItem(index);
+        };
+
+        controls.append(minus, qty, plus, remove);
+        li.append(name, controls);
         list.appendChild(li);
     });
+
+    if (cart.length === 0) {
+        let li = document.createElement("li");
+        li.textContent = "Your cart is empty 💗";
+        list.appendChild(li);
+    }
+
+    document.getElementById("cartCount").textContent = count;
+    document.getElementById("cartTotal").textContent = "₹" + total;
 }
 
 function clearCart() {
     cart = [];
-    total = 0;
     updateCart();
 }
+
+function orderWhatsApp() {
+    if (cart.length === 0) {
+        alert("Please add a product to your cart first! 💗");
+        return;
+    }
+
+    let message = "Hello Glow & Grace! 💗%0A";
+    message += "I would like to order:%0A%0A";
+
+    let total = 0;
+
+    cart.forEach(function(item) {
+        message += encodeURIComponent(item.name) +
+            " x " + item.quantity +
+            " = ₹" + (item.price * item.quantity) + "%0A";
+
+        total += item.price * item.quantity;
+    });
+
+    message += "%0ATotal: ₹" + total;
+    message += "%0APlease confirm availability and delivery details.";
+
+    // Replace the placeholder below with your WhatsApp number.
+    // Use country code and digits only, without + or spaces.
+    let phone = "91XXXXXXXXXX";
+
+    if (phone.includes("X")) {
+        alert("The WhatsApp button is ready! First add your WhatsApp number in the code.");
+        return;
+    }
+
+    window.open(
+        "https://wa.me/" + phone + "?text=" + message,
+        "_blank"
+    );
+}
+
+updateCart();
 </script>
 
 </body>
-</html>
-   
+    </html>
